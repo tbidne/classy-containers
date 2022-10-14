@@ -1,0 +1,7 @@
+cradle:
+  cabal:
+    - path: "./src"
+      component: "lib:classy-containers"
+
+    - path: "./app/Main.hs"
+      component: "classy-containers:exe:classy-containers"
