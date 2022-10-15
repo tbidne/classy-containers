@@ -67,13 +67,6 @@ instance CMap (HashMap k) where
   type CMapC (HashMap k) _ = ()
   cmap = fmap
 
--- TODO: is this possible?
-
--- | @since 0.1
--- instance CMap IntSet where
---  type CMapC IntSet _ = ()
---  cmap = IntSet.map
-
 -- | @since 0.1
 instance CMap IntMap where
   type CMapC IntMap _ = ()

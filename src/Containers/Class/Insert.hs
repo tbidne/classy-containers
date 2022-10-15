@@ -22,8 +22,6 @@ import Data.Map qualified as Map
 import Data.Set (Set)
 import Data.Set qualified as Set
 
--- TODO: infix, lazy maps/sets
-
 -- | Types that support an "unordered" insert.
 --
 -- @since 0.1
@@ -45,9 +43,7 @@ class Insert a where
 (⟇) :: (Insert a, InsertC a) => IElem a -> a -> a
 (⟇) = insert
 
--- TODO: set infix
-
--- containers: IntMap, IntSet, Map, Seq, Set,
+infix 5 ⟇
 
 instance Insert (HashMap k v) where
   type InsertC (HashMap k v) = (Eq k, Hashable k)

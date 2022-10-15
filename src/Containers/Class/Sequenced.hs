@@ -33,11 +33,15 @@ class Sequenced a where
 (⋗) :: Sequenced a => a -> SElem a -> a
 (⋗) = append
 
+infix 5 ⋗
+
 -- | Operator alias for 'prepend'. U+22D6.
 --
 -- @since 0.1
 (⋖) :: Sequenced a => SElem a -> a -> a
 (⋖) = prepend
+
+infix 5 ⋖
 
 -- | @since 0.1
 instance Sequenced [a] where

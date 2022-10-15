@@ -37,6 +37,8 @@ class Size a where
 (♯) :: (HasCallStack, Size a) => a -> Natural
 (♯) = size
 
+infix 4 ♯
+
 -- | @since 0.1
 instance Size [a] where
   size = fromIntegral . length
