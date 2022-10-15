@@ -8,13 +8,13 @@ module Containers.Class.Difference
   )
 where
 
+import Containers.Class.Internal (HashCompat)
 import Containers.Class.Union (Union, (∪))
 import Data.Foldable (Foldable (foldl'))
 import Data.HashMap.Strict (HashMap)
 import Data.HashMap.Strict qualified as HMap
 import Data.HashSet (HashSet)
 import Data.HashSet qualified as HSet
-import Data.Hashable (Hashable)
 import Data.IntMap (IntMap)
 import Data.IntMap qualified as IntMap
 import Data.IntSet (IntSet)
@@ -53,11 +53,11 @@ instance Eq a => Difference [a] where
   difference = diffViaFold (:)
 
 -- | @since 0.1
-instance Hashable k => Difference (HashMap k v) where
+instance HashCompat k => Difference (HashMap k v) where
   difference = HMap.difference
 
 -- | @since 0.1
-instance Hashable a => Difference (HashSet a) where
+instance HashCompat a => Difference (HashSet a) where
   difference = HSet.difference
 
 -- | @since 0.1

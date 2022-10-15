@@ -8,10 +8,10 @@ module Containers.Class.CMap
   )
 where
 
+import Containers.Class.Internal (HashCompat)
 import Data.HashMap.Strict (HashMap)
 import Data.HashSet (HashSet)
 import Data.HashSet qualified as HSet
-import Data.Hashable (Hashable)
 import Data.IntMap (IntMap)
 import Data.Kind (Constraint)
 import Data.Map (Map)
@@ -59,7 +59,7 @@ instance CMap [] where
 
 -- | @since 0.1
 instance CMap HashSet where
-  type CMapC HashSet a = Hashable a
+  type CMapC HashSet a = HashCompat a
   cmap = HSet.map
 
 -- | @since 0.1

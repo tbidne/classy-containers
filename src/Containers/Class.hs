@@ -4,6 +4,7 @@
 module Containers.Class
   ( -- * Base
     module Containers.Class.Empty,
+    module Containers.Class.Size,
     module Containers.Class.Member,
 
     -- * Insertions
@@ -23,4 +24,5 @@ import Containers.Class.Empty
 import Containers.Class.Insert
 import Containers.Class.Member
 import Containers.Class.Sequenced
+import Containers.Class.Size
 import Containers.Class.Union

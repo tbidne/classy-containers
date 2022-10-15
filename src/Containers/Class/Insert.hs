@@ -50,12 +50,12 @@ class Insert a where
 -- containers: IntMap, IntSet, Map, Seq, Set,
 
 instance Insert (HashMap k v) where
-  type InsertC (HashMap k v) = Hashable k
+  type InsertC (HashMap k v) = (Eq k, Hashable k)
   type IElem (HashMap k v) = (k, v)
   insert (k, v) = HMap.insert k v
 
 instance Insert (HashSet a) where
-  type InsertC (HashSet a) = Hashable a
+  type InsertC (HashSet a) = (Eq a, Hashable a)
   type IElem (HashSet a) = a
   insert = HSet.insert
 

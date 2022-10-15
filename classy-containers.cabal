@@ -61,8 +61,10 @@ library
     Containers.Class.Difference
     Containers.Class.Empty
     Containers.Class.Insert
+    Containers.Class.Internal
     Containers.Class.Member
     Containers.Class.Sequenced
+    Containers.Class.Size
     Containers.Class.Union
 
   build-depends:

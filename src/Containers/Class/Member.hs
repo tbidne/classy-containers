@@ -8,11 +8,11 @@ module Containers.Class.Member
   )
 where
 
+import Containers.Class.Internal (HashCompat)
 import Data.HashMap.Strict (HashMap)
 import Data.HashMap.Strict qualified as HMap
 import Data.HashSet (HashSet)
 import Data.HashSet qualified as HSet
-import Data.Hashable (Hashable)
 import Data.IntMap (IntMap)
 import Data.IntMap qualified as IntMap
 import Data.IntSet (IntSet)
@@ -38,12 +38,12 @@ instance Eq a => Member [a] where
   member = elem
 
 -- | @since 0.1
-instance Hashable k => Member (HashMap k v) where
+instance HashCompat k => Member (HashMap k v) where
   type MElem (HashMap k v) = k
   member = HMap.member
 
 -- | @since 0.1
-instance Hashable a => Member (HashSet a) where
+instance HashCompat a => Member (HashSet a) where
   type MElem (HashSet a) = a
   member = HSet.member
 

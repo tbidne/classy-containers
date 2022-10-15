@@ -9,11 +9,11 @@ module Containers.Class.Union
 where
 
 import Containers.Class.Empty (Empty, (∅))
+import Containers.Class.Internal (HashCompat)
 import Data.HashMap.Strict (HashMap)
 import Data.HashMap.Strict qualified as HMap
 import Data.HashSet (HashSet)
 import Data.HashSet qualified as HSet
-import Data.Hashable (Hashable)
 import Data.IntMap (IntMap)
 import Data.IntMap qualified as IntMap
 import Data.IntSet (IntSet)
@@ -50,11 +50,11 @@ instance Union [a] where
   union = (++)
 
 -- | @since 0.1
-instance Hashable k => Union (HashMap k v) where
+instance HashCompat k => Union (HashMap k v) where
   union = HMap.union
 
 -- | @since 0.1
-instance Hashable a => Union (HashSet a) where
+instance HashCompat a => Union (HashSet a) where
   union = HSet.union
 
 -- | @since 0.1
