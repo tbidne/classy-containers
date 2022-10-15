@@ -74,7 +74,7 @@ haddock:
 	cabal haddock --haddock-hyperlink-source --haddock-quickjump ;\
 	mkdir -p docs/ ;\
 	find docs/ -type f | xargs -I % sh -c "rm -r %" ;\
-	cp -r dist-newstyle/build/x86_64-linux/ghc-9.2.3/classy-containers-0.1/opt/doc/html/classy-containers/* docs/
+	cp -r dist-newstyle/build/x86_64-linux/ghc-9.2.4/classy-containers-0.1/opt/doc/html/classy-containers/* docs/
 
 haddockc:
 	nix run github:tbidne/nix-hs-tools/0.6.1#haddock-cov -- .
